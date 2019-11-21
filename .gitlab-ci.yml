@@ -1,21 +1,20 @@
 image: maven:latest
 
 stages:
-  - compile
   - package
 
-compile:
-  stage: compile
-  script:
-    - ls
-    - mvn compile
-    - ls
-  artifacts:
-    paths:
-      - target
-
-package:
+package first:
   stage: package
   script:
-    - ls
     - mvn package
+  rules:
+    - changes:
+        - gitlab-ci-mm-first/**
+
+package second:
+  stage: package
+  script:
+    - mvn package
+  rules:
+    - changes:
+        - gitlab-ci-mm-second/**
