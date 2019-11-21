@@ -5,16 +5,22 @@ stages:
 
 package first:
   stage: package
+  before_script:
+    - cd gitlab-ci-mm-first
   script:
     - mvn package
   rules:
     - changes:
         - gitlab-ci-mm-first/**
+        when: always
 
 package second:
   stage: package
+  before_script:
+    - cd gitlab-ci-mm-second
   script:
     - mvn package
   rules:
     - changes:
         - gitlab-ci-mm-second/**
+        when: always
