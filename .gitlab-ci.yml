@@ -5,7 +5,7 @@ stages:
   - package
 
 compile:
-  stage: test
+  stage: compile
   script:
     - ls
     - mvn compile
