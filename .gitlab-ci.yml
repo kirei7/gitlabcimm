@@ -11,8 +11,8 @@ package first:
     - mvn package
   rules:
     - changes:
-        - gitlab-ci-mm-first/**
-        when: always
+      - gitlab-ci-mm-first/**
+      when: always
 
 package second:
   stage: package
@@ -22,5 +22,5 @@ package second:
     - mvn package
   rules:
     - changes:
-        - gitlab-ci-mm-second/**
-        when: always
+      - gitlab-ci-mm-second/**
+      when: always
