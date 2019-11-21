@@ -1,0 +1,26 @@
+image: maven:latest
+
+stages:
+  - test
+  - package
+
+compile:
+  stage: test
+  script:
+    - ls
+    - mvn compile
+    - ls
+  artifacts:
+    paths:
+      - target
+
+test:
+  stage: test
+  script:
+    - ls
+    - mvn test
+
+package:
+  stage: package
+  script:
+    - mvn package
