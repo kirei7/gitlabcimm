@@ -1,7 +1,7 @@
 image: maven:latest
 
 stages:
-  - test
+  - compile
   - package
 
 compile:
@@ -14,13 +14,8 @@ compile:
     paths:
       - target
 
-test:
-  stage: test
-  script:
-    - ls
-    - mvn test
-
 package:
   stage: package
   script:
+    - ls
     - mvn package
