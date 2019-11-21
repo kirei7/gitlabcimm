@@ -12,6 +12,7 @@ package first:
   rules:
     - changes:
       - gitlab-ci-mm-first/**
+      - gitlab-ci-mm-first/src/main/java/com/vlad/learn/GitlabTestFirst.java
       when: always
 
 package second:
